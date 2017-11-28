@@ -41,6 +41,14 @@ resources:
     organization: {{cf-org}}
     space: production
 
+- name: tweet
+  type: twitter
+  source:
+    consumer_key: {{twitter-consumer-key}}
+    consumer_secret: {{twitter-consumer-secret}}
+    access_token: {{twitter-access-token}}
+    access_token_secret: {{twitter-access-token-secret}}
+
 jobs:
 - name: build
   plan:
@@ -81,3 +89,14 @@ jobs:
       path: pal-tracker-artifacts/pal-tracker-*.jar
       environment_variables:
         WELCOME_MESSAGE: "Hello from the production environment"
+
+- name: do-tweet
+  plan:
+  - get: pal-tracker-artifacts
+    trigger: true
+    passed: [deploy-production]
+  - put: tweet
+    params:
+      status: >
+        This is the first tweet without a picture (build ${BUILD_ID})
+        from my custom concourseci resource!
