@@ -1,4 +1,4 @@
-##Flyway integration with Spring Boot
+## Flyway integration with Spring Boot
 
 Spring boot application can automatically verify if DB schema is up-to-date, and run flyway migration scripts if there are new migration instructions. 
 
