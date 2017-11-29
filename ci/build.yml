@@ -26,8 +26,6 @@ run:
     apt-get -y install mysql-server
     service mysql start
 
-    sleep 2
-
     cd pal-tracker
     mysql -uroot < databases/tracker/create_databases.sql
     chmod +x gradlew
