@@ -21,8 +21,8 @@ For local configuration the information about MySQL instance should be provided 
 	spring.datasource.password=
 	
 >
->###Notice
->You have to use correct username and password for your local database. 
+>### Notice
+>Correct username and password should be provided. 
 
 ### Migration files location
 According to the flyway naming conventions the "migration files" should be located in `src/main/resources/db/migration/` folder.
