@@ -16,7 +16,8 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-jdbc")
     compile("org.springframework.boot:spring-boot-starter-actuator")
     compile("mysql:mysql-connector-java:6.0.6")
-
+    compile group: 'org.springframework.boot', name: 'spring-boot-actuator-docs', version: '1.5.9.RELEASE'
+    compile("org.springframework.boot:spring-boot-starter-security")
     testCompile("org.springframework.boot:spring-boot-starter-test")
 }
 
